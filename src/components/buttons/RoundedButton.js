@@ -30,7 +30,7 @@ export default class RoundedButton extends Component {
 RoundedButton.propTypes = {
     text: PropTypes.string.isRequired,
     color: PropTypes.string,
-    backgroundColor : PropTypes.stirng,
+    background : PropTypes.stirng,
     icon: PropTypes.object,
     handleOnPress: PropTypes.func.isRequired,
 };
