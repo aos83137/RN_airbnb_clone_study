@@ -23,7 +23,8 @@ export default class LogIn extends Component {
         return (
             <KeyboardAvoidingView 
                 style={styles.wrapper}
-                // behavior="padding"
+                //behavior 키보드에 숨겨진 다음 버튼을 수정해야합니다 
+                behavior="padding"
                 >
                 <View
                     style={styles.scrollViewWrapper}
@@ -67,10 +68,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:colors.green01,
     },
-    scrollViewWrapper:{
-        marginTop:70,
-        flex:1,
-    },
+    scrollViewWrapper: {
+        marginTop: 70,
+        flex: 1,
+        padding: 0,
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
     scrollView:{
         paddingLeft :30,
         paddingRight: 30,
