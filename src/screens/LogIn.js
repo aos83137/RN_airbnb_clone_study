@@ -12,12 +12,18 @@ import {
 } from 'react-native';
 import colors from '../styles/colors';
 import InputField from '../components/form/inputField';
-
+import NextArrowButton from '../components/buttons/NextArrowButton'
 export default class LogIn extends Component {
+
+    handleNextButton(){
+        alert('Next Button');
+    }
+
     render(){
         return (
             <KeyboardAvoidingView 
                 style={styles.wrapper}
+                // behavior="padding"
                 >
                 <View
                     style={styles.scrollViewWrapper}
@@ -30,19 +36,31 @@ export default class LogIn extends Component {
                             labelText={"EMAIL ADDRESS"}
                             labelTextSize={14}
                             labelColor={colors.white}
+                            textColor={colors.white}
+                            borderBottomColor = {colors.white}
+                            inputType="email"
+                            customStyle={{ marginBottom : 30 }}
                         />
                         <InputField
                             labelText={"PASS WORD"}
                             labelTextSize={14}
                             labelColor={colors.white}
+                            textColor={colors.white}
+                            borderBottomColor = {colors.white}
+                            inputType="password"
+                            customStyle={{ marginBottom : 30 }}
                         />
                     </ScrollView>
+                    <View style={styles.nextButton}>
+                        <NextArrowButton
+                            handleNextButton={this.handleNextButton}
+                        />
+                    </View>
                 </View>
             </KeyboardAvoidingView>
         );
     }
 }
-const screenHeight = Dimensions.get('window').height
 const styles = StyleSheet.create({
     wrapper:{
         display : 'flex',
@@ -54,7 +72,6 @@ const styles = StyleSheet.create({
         flex:1,
     },
     scrollView:{
-        height: screenHeight,
         paddingLeft :30,
         paddingRight: 30,
         paddingTop: 20,
@@ -66,5 +83,11 @@ const styles = StyleSheet.create({
         fontWeight: '300',
         marginBottom:40,
     },
+    nextButton:{
+        //flex-end 이거하면 스크롤해도 밑에 고정임
+        alignItems: 'flex-end',
+        right : 20,
+        bottom: 20,
+    }
 
 });
