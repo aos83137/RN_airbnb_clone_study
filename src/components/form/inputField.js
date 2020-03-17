@@ -63,6 +63,8 @@ export default class InputField extends Component {
 
 //propTypes이거 뭐지?
 InputField.protoTypes = {
+
+    //
     labelText: PropTypes.string.inRequired,
     labelTextSize : PropTypes.number,
     labelColor:PropTypes.string,
@@ -92,5 +94,6 @@ const styles = StyleSheet.create({
     showButtonText:{
         color:colors.white,
         fontWeight: '700'
+        
     }
 });
